@@ -1,0 +1,33 @@
+{
+  "name": "electron-obfuscated",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "del": "^5.1.0",
+    "electron": "^7.1.11",
+    "electron-builder": "^22.3.2",
+    "javascript-obfuscator": "^0.24.4",
+    "ncp": "^2.0.0"
+  },
+  "scripts": {
+    "start-dev": "electron .",
+    "obfuscate": "javascript-obfuscator bvld --output .",
+    "dist": "electron-builder .",
+    "dist:both": "electron-builder . -mw",
+    "package": "node build.js"
+  },
+  "build": {
+    "files": [
+      "bvld/**/*",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
