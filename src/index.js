@@ -8,7 +8,7 @@ const createWindow = () => {
     width: 900,
   });
 
-  mainWindow.loadFile(path.join(__dirname, "renderer", "index.html"));
+  mainWindow.loadFile(path.join(__dirname, 'renderer', 'index.html'));
 };
 
 ipc.on('quit', app.quit);
